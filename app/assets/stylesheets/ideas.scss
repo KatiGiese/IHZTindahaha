@@ -3,7 +3,13 @@
 h1 {color: blue;}
 label {color: black;}
 body.mybody {background-color: #198caa}
-div.navbar-header {background-color: grey}
+div.navbar-header {background-color: #ffffff}
 button.navbar-toggle {background-color: #ffffff}
-.navbar-default .navbar-header .navbar-brand {color: #ffffff}
+.navbar-default .navbar-header .navbar-brand {color: #000000}
+.navbar-nav {background-color: #ffffff; color: #000000}
 a {color: #e46648}
+
+
+.logo {
+  float: right;
+}
