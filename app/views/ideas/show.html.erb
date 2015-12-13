@@ -1,5 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<% if @accept_idea == true %>
+<p>
+Congratulations! You found your perfect match. We wish you a happy collaboration.
+</p>
+<% end %>
+<p>
+<%= image_tag(@idea.picture_url, :width => 200) if @idea.picture.present? %>
+</p>
+
 <p>
   <strong>Name:</strong>
   <%= @idea.name %>
@@ -7,25 +16,31 @@
 
 <% if @accept_idea == true %>
 <p>
-  Show this if yes
+  <strong>Email address:</strong>
+  <%= @idea.email_address %>
 </p>
 <% end %>
 
 <p>
-  <strong>Description:</strong>
-  <%= @idea.description %>
-</p>
-
-<%= link_to 'Yes', accept_idea_path(@idea) %> |
-<%= link_to 'No', decline_idea_path(@idea) %>
-<p>
-  <strong>Picture:</strong>
-<%= image_tag(@idea.picture_url, :width => 300) if @idea.picture.present? %>
+  <strong>Short Bio:</strong>
+  <%= @idea.short_bio %>
 </p>
 
 <p>
-  <strong>phone number:</strong>
-  <%= @idea.phone_number %>
+  <strong>Skills:</strong>
+  <%= @idea.skills %>
 </p>
+
+<p>
+  <strong>Sector of Work:</strong>
+  <%= @idea.sector_of_work %>
+</p>
+
+
+
+<%= button_to 'Yes', accept_idea_path(@idea), method: :get %> |
+<%= button_to 'No', decline_idea_path(@idea) %>
+
+
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
 <%= link_to 'Back', ideas_path %>
