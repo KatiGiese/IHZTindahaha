@@ -1,23 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Ideas</h1>
+<h1>Member Index</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
       <th>Picture</th>
-      <th colspan="3"></th>
+      <th>Name</th>
+      <th>Short Bio</th>
+      <th>Skills</th>
+      <th>Sector of Work</th>
+      <th>Email Address</th>
+      <th colspan="6"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @ideas.each do |idea| %>
       <tr>
+        <td><%= image_tag(idea.picture, :width => 200) if idea.picture.present? %></td>
         <td><%= idea.name %></td>
         <td><%= idea.description %></td>
-        <td><%= image_tag(idea.picture, :width => 300) if idea.picture.present? %></td>
         <td><%= link_to 'Show', idea %></td>
         <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
         <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
