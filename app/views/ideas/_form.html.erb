@@ -16,18 +16,26 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.label :short_bio %><br>
+    <%= f.text_area :short_bio %>
   </div>
   <div class="field">
-    <%= f.label :picture %><br>
-    <%= f.file_field :picture %>
+    <%= f.label :skills %><br>
+    <%= f.text_area :skills %>
   </div>
+  <div class="field">
+    <%= f.label :sector_of_work %><br>
+    <%= f.text_area :sector_of_work %>
+  <div class="field">
+    <%= f.label :email_address %><br>
+    <%= f.text_field :email_address %>
+  </div>
+</div>
+<div class="field">
+  <%= f.label :picture %><br>
+  <%= f.file_field :picture %>
+</div>
   <div class="actions">
-    <%= f.submit %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number %>
+    <%= f.submit "Create Member"%>
   </div>
 <% end %>
